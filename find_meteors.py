@@ -31,7 +31,7 @@ meteor_data = meteor_resp.json()
 # se realiza un for donde por cada meteor en la lista, si existen los atributos
 # reclat y reclong dentro del diccionario dentro de cada elemento de la lista,
 # se agrega el elemento 'distance' dentro del diccionario que se calcula entre
-# la tupla my_loc y la coordenada de cada meteorito
+# la tupla my_loc y la coordenada de cada meteorito.
 for meteor in meteor_data:
     if not ('reclat' in meteor and 'reclong' in meteor): continue
     meteor['distance'] = calc_dist(my_loc[0], my_loc[1], float(meteor['reclat']), float(meteor['reclong']))
